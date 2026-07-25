@@ -1,0 +1,10 @@
+{
+  "custom/herdr-work": {
+    "exec": "waybar-herdr --session work watch",
+    "return-type": "json",
+    "restart-interval": 2,
+    "hide-empty-text": true,
+    "exec-on-event": false,
+    "on-click": "waybar-herdr --session work focus-attention"
+  }
+}

@@ -1,0 +1,11 @@
+#custom-herdr {
+  padding: 0 8px;
+  border-radius: 8px;
+}
+
+#custom-herdr.blocked { background: rgba(247, 118, 142, 0.18); }
+#custom-herdr.done { background: rgba(158, 206, 106, 0.18); }
+#custom-herdr.working { background: rgba(122, 162, 247, 0.18); }
+#custom-herdr.unknown { background: rgba(224, 175, 104, 0.18); }
+#custom-herdr.idle { opacity: 0.65; }
+#custom-herdr.offline { opacity: 0.4; }

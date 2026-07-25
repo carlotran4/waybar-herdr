@@ -1,0 +1,13 @@
+{
+  "modules-right": ["custom/herdr", "network", "battery"],
+
+  "custom/herdr": {
+    "exec": "waybar-herdr watch",
+    "return-type": "json",
+    "restart-interval": 2,
+    "hide-empty-text": true,
+    "exec-on-event": false,
+    "on-click": "waybar-herdr focus-attention",
+    "tooltip": true
+  }
+}
