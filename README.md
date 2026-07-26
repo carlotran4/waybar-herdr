@@ -5,7 +5,9 @@
 
 An event-driven [Waybar](https://github.com/Alexays/Waybar) module for [Herdr](https://herdr.dev/). See every coding agent's state at a glance and jump to the agent that needs attention most.
 
-![waybar-herdr in a transparent Waybar](docs/waybar-herdr.png)
+[![waybar-herdr responding to live Herdr agent state](docs/demo.gif)](docs/demo.mp4)
+
+_Click the animation to open the full-quality MP4._
 
 ## Features
 
@@ -101,7 +103,7 @@ Use a named Herdr session:
 "on-click": "waybar-herdr --session work focus-attention"
 ```
 
-Or set `HERDR_SESSION=work`. An explicit `--socket PATH` takes highest precedence, followed by `HERDR_SOCKET_PATH`, then the selected session.
+Or set `HERDR_SESSION=work`. Resolution order is explicit `--socket`, explicit `--session`, `HERDR_SOCKET_PATH`, `HERDR_SESSION`, then the default socket.
 
 ## Customize icons and colors
 

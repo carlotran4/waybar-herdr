@@ -23,12 +23,19 @@ def resolve_socket_path(
     env = os.environ if environ is None else environ
     if explicit:
         return Path(explicit).expanduser()
-    if env.get("HERDR_SOCKET_PATH"):
-        return Path(env["HERDR_SOCKET_PATH"]).expanduser()
 
     config_home = Path(env.get("XDG_CONFIG_HOME", (home or Path.home()) / ".config"))
     root = config_home / "herdr"
-    selected_session = session or env.get("HERDR_SESSION")
+    if session:
+        return (
+            root / "herdr.sock"
+            if session == "default"
+            else root / "sessions" / session / "herdr.sock"
+        )
+    if env.get("HERDR_SOCKET_PATH"):
+        return Path(env["HERDR_SOCKET_PATH"]).expanduser()
+
+    selected_session = env.get("HERDR_SESSION")
     if selected_session and selected_session != "default":
         return root / "sessions" / selected_session / "herdr.sock"
     return root / "herdr.sock"

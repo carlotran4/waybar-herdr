@@ -45,6 +45,13 @@ def test_socket_path_resolution(tmp_path: Path) -> None:
     override = tmp_path / "override.sock"
     assert resolve_socket_path(override, environ=env) == override
     assert resolve_socket_path(environ={"HERDR_SOCKET_PATH": str(override)}) == override
+    assert (
+        resolve_socket_path(
+            session="work",
+            environ={"XDG_CONFIG_HOME": str(tmp_path), "HERDR_SOCKET_PATH": str(override)},
+        )
+        == tmp_path / "herdr/sessions/work/herdr.sock"
+    )
 
 
 def test_request_and_agent_list_over_real_unix_socket(tmp_path: Path) -> None:

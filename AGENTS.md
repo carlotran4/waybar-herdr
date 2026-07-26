@@ -61,8 +61,8 @@ When the known set of agent pane IDs changes, rebuild the subscription. Close so
 Socket resolution precedence is:
 
 1. `--socket`
-2. `HERDR_SOCKET_PATH`
-3. `--session`
+2. `--session`
+3. `HERDR_SOCKET_PATH`
 4. `HERDR_SESSION`
 5. the default Herdr socket
 
